@@ -6,9 +6,9 @@
             <div class="mr-auto p-2 bd-highlight">{{this.item.title}}</div>
             <div class="p-2 bd-highlight">{{this.price}}</div>
             <div class="p-2 bd-highlight">{{this.qty}}</div>
-            <div class="p-2 bd-highlight"><a href=""><i class="fas fa-plus-circle"></i></a></div>
-            <div class="p-2 bd-highlight"><a href=""><i class="fas fa-minus-circle"></i></a></div>
-            <div class="p-2 bd-highlight"><a href=""><i class="fas fa-ban"></i></a></div>
+            <div class="p-2 bd-highlight"><a href="/increase/{{this.item._id}}"><i class="fas fa-plus-circle"></i></a></div>
+            <div class="p-2 bd-highlight"><a href="/reduce/{{this.item._id}}"><i class="fas fa-minus-circle"></i></a></div>
+            <div class="p-2 bd-highlight"><a href="/remove/{{this.item._id}}"><i class="fas fa-ban"></i></a></div>
         </div>
         {{/each}}
     </div>

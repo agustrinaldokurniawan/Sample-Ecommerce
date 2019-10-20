@@ -1,1 +1,19 @@
-<h1>User Profile</h1>
+<div class="row justify-content-md-center">
+    <div class="col-sm-6">
+        <h1>Profile</h1>
+        <h3>My Complete Order</h3>
+        {{# each orders}}
+        {{#each this.items}}
+        <div class="d-flex bd-highlight mb-3">
+            <div class="mr-auto p-2 bd-highlight">{{this.item.title}}</div>
+            <div class="p-2 bd-highlight">{{this.price}}</div>
+            <div class="p-2 bd-highlight">Qty: {{this.qty}}</div>
+        </div>
+        {{/each}}
+        <div class="d-flex bd-highlight mb-3 font-weight-bold">
+            <div class="mr-auto p-2 bd-highlight">Total</div>
+            <div class="p-2 bd-highlight">Rp {{this.cart.totalPrice}}</div>
+        </div>
+        {{/each}}
+    </div>
+</div>
