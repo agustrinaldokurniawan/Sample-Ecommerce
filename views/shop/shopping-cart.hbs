@@ -1,0 +1,33 @@
+{{#if products}}
+<div class="row justify-content-md-center">
+    <div class="col-sm-6">
+        {{# each products}}
+        <div class="d-flex bd-highlight mb-3">
+            <div class="mr-auto p-2 bd-highlight">{{this.item.title}}</div>
+            <div class="p-2 bd-highlight">{{this.price}}</div>
+            <div class="p-2 bd-highlight">{{this.qty}}</div>
+            <div class="p-2 bd-highlight"><a href=""><i class="fas fa-plus-circle"></i></a></div>
+            <div class="p-2 bd-highlight"><a href=""><i class="fas fa-minus-circle"></i></a></div>
+            <div class="p-2 bd-highlight"><a href=""><i class="fas fa-ban"></i></a></div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+<div class="row justify-content-md-center">
+    <div class="col-sm-6">
+        <div class="d-flex bd-highlight mb-3">
+            <div class="mr-auto p-2 bd-highlight">Total</div>
+            <div class="p-2 bd-highlight">{{totalPrice}}</div>
+            <div class="p-2 bd-highlight"><a href="/checkout"><i class="fas fa-shopping-cart"></i> Checkout</a></div>
+        </div>
+    </div>
+</div>
+{{else}}
+<div class="row justify-content-md-center">
+    <div class="col-sm-6">
+        <div class="d-flex bd-highlight mb-3">
+            <div class="mr-auto p-2 bd-highlight">No Items in Cart</div>
+        </div>
+    </div>
+</div>
+{{/if}}

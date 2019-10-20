@@ -1,0 +1,30 @@
+<div class="row justify-content-center">
+    <div class="col-md-12">
+        <div class="alert alert-success {{#if noMessages}}d-none{{/if}}" id="success">
+            {{successMsg}}
+        </div>
+    </div>
+</div>
+{{# each products}}
+<div class="row my-3">
+    {{# each this }}
+    <div class="col-sm">
+        <div class="card mx-auto" style="width: 18rem;">
+            <img src="{{this.imagePath}}" class="img-fluid" alt="{{this.title}}">
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text">{{this.description}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item price">Rp {{this.price}}</li>
+            </ul>
+            <div class="card-footer">
+                <a href="/add-to-cart/{{this._id}}" class="btn btn-success btn-block"><i
+                        class="fas fa-shopping-cart"></i> Add to
+                    Cart</a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/each}}
