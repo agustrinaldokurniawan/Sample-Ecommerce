@@ -100,7 +100,7 @@ router.post("/checkout", isLoggedIn, function(req, res, next) {
   // `source` is obtained with Stripe.js; see https://stripe.com/docs/payments/cards/collecting/web#create-token
   stripe.charges.create(
     {
-      amount: cart.totalPrice * 100,
+      amount: cart.totalPrice,
       currency: "idr",
       source: req.body.stripeToken,
       description: "Test Charge"
