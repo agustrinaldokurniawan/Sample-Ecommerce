@@ -16,10 +16,13 @@ var userRouter = require("./routes/user");
 
 var app = express();
 
-mongoose.connect("mongodb://localhost:27017/shopping", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+mongoose.connect(
+  "mongodb://shopping:mypassword@cluster0-shard-00-00-glv0u.mongodb.net:27017,cluster0-shard-00-01-glv0u.mongodb.net:27017,cluster0-shard-00-02-glv0u.mongodb.net:27017/shopping?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }
+);
 require("./config/passport");
 
 // view engine setup

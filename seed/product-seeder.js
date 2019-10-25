@@ -2,7 +2,13 @@ var Product = require("../models/product");
 
 var mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/shopping");
+mongoose.connect(
+  "mongodb+srv://shopping:mypassword@cluster0-glv0u.mongodb.net/shopping?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }
+);
 
 var product = [
   new Product({
