@@ -95,7 +95,7 @@ router.post("/checkout", isLoggedIn, function(req, res, next) {
   }
   var cart = new Cart(req.session.cart);
 
-  var stripe = require("stripe")("sk_test_uDIFUkLi6pqMa1M4iG78eAKq004N78CImt");
+  var stripe = require("stripe")("");
 
   // `source` is obtained with Stripe.js; see https://stripe.com/docs/payments/cards/collecting/web#create-token
   stripe.charges.create(
